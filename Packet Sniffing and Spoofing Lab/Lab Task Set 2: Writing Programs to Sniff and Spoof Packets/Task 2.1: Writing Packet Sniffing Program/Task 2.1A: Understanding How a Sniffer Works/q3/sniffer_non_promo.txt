@@ -1,6 +1,0 @@
-handle = pcap_open_live("enp0s3", BUFSIZ, 1, 1000, errbuf);
-=>
-handle = pcap_open_live("enp0s3", BUFSIZ, 0, 1000, errbuf);
-
-1: promocious mode enabled
-0: promocious mode desabled
