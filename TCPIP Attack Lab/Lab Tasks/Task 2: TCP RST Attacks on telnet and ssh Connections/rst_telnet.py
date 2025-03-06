@@ -8,7 +8,7 @@ def send_reset(src_ip, dst_ip, sport, dport, seq, ack):
     send(pkt, verbose=0)
 def sniff_packet(pkt):
     if pkt.haslayer(TCP) and pkt.haslayer(IP):
-        src_ip = pkt[IP].srcs
+        src_ip = pkt[IP].src
         dst_ip = pkt[IP].dst
         sport = pkt[TCP].sport
         dport = pkt[TCP].dport

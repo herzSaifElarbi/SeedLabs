@@ -22,7 +22,7 @@ def forwarding_pkt(pkt):
         send(newpkt, verbose=False)
         if pkt.haslayer(TCP) and pkt[TCP].payload:
             test_code = pkt[TCP].payload.load
-            if b'(RSD1)seed@seed-target2:~$ ' in test_code:
+            if b'(RSD1:client)seed@seed-target2(10.0.2.6):~$ ' in test_code:
                 print("Login detected!!!!")
                 stop_sniffing = True  # Set the flag to stop sniffing
 
