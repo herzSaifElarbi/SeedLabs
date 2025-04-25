@@ -1,0 +1,1 @@
+cmd_/home/seed/host/Linux_Firewall_Exploration_Lab/task2/simple_fw.ko := ld -r -m elf_i386 -T ./scripts/module-common.lds --build-id  -o /home/seed/host/Linux_Firewall_Exploration_Lab/task2/simple_fw.ko /home/seed/host/Linux_Firewall_Exploration_Lab/task2/simple_fw.o /home/seed/host/Linux_Firewall_Exploration_Lab/task2/simple_fw.mod.o
